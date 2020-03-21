@@ -1,7 +1,6 @@
-### Movie Genres: A Century of Storytelling
+## Movie Genres: A Century of Storytelling
 
-## Multi-label Classification with NLP
-## Movie Genres
+### Multi-label Classification with NLP
 
-Tom Keith - Capstone Project
+#### Tom Keith - Capstone Project
 
