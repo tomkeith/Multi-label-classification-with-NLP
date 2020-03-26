@@ -1,6 +1,9 @@
-## Movie Genres: A Century of Storytelling
+## Genre Genie - Movie Genre Predictions
 
-### Multi-label Classification with NLP
+### Multi-label Classification with Natural Language Processing
 
 #### Tom Keith - Capstone Project
 
+DEMO: http://tomkeith.pythonanywhere.com/
+
+Completed code will be added by March 30, 2020.
