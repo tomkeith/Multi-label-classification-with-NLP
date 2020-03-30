@@ -1,0 +1,38 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Genre Genie - Movie Genre Predictor - Tom Keith</title>
+</head>
+<body>
+	<h1>Genre Genie</h1><img src="{{ url_for('static',filename='images/') }}magic-lamp.png" />
+	<h3>Movie Genre Predictor</h3>
+	<div class="container">
+		<p>Enter a plot summary to get genre predictions.</p>
+		<form action="" class="form-inline" method="post">
+			<textarea rows="12" cols="100" type="textarea" class="form-control" placeholder = "{{ my_string }}" name="plot" value="{{request.form.plot}}" >{% if my_string %}{{ my_string }}{% else %}Luke Skywalker, Han Solo, Princess Leia and Chewbacca face attack by the Imperial forces and its AT-AT walkers on the ice planet Hoth. While Han and Leia escape in the Millennium Falcon, Luke travels to Dagobah in search of Yoda. Only with the Jedi Master's help will Luke survive when the Dark Side of the Force beckons him into the ultimate duel with Darth Vader.{% endif %}</textarea>
+			<br /><br />
+			<input class="btn" type="submit" value="MAKE PREDICTION">
+		<br />
+		</form>
+		<br />
+		{% if results %}
+			<div class="results">
+			{% for g in results %}
+				<div class="genre_block">
+					<div class="genre_icon"><img  src="{{ url_for('static',filename='images/') }}{{g[1]}}.png" /></div>
+					<div class="genre_name">{{g[1]}}</div>
+					<div class="genre_score">{{g[0]}} %</div>
+				<br />
+				</div>
+
+			{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+	{% if error %}<p>{{error}}</p>{% endif %}
+	<div class="footer">
+        <p>Created by Tom Keith - <a href="https://github.com/tomkeith" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/tomkeithdata/" target="_blank">LinkedIn</a></p>
+    </div>
+</body>
+</html>

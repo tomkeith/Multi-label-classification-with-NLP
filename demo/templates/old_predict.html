@@ -1,0 +1,33 @@
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styles.css') }}">
+<title>Movie Genre Predictor</title>
+</head>
+<body>
+	<h1>Movie Genre Predictor</h1>
+	<div class="container">
+		<p>Enter a plot summary to get genre predictions.</p>
+		<form action="" class="form-inline" method="post">
+			<textarea rows="12" cols="100" type="textarea" class="form-control" placeholder = "{{ my_string }}" name="plot" value="{{request.form.plot}}"></textarea>
+			<br /><br />
+			<input class="btn" type="submit" value="MAKE PREDICTION">
+		<br />
+		</form>
+		<br />
+		{% if results %}
+			<div class="results">
+			{% for g in results %}
+				<div class="genre_block">
+					<div class="genre_icon"><img  src="{{ url_for('static',filename='images/') }}{{g[1]}}.png" /></div>
+					<div class="genre_name">{{g[1]}}</div>
+					<div class="genre_score">{{g[0]}} %</div>
+				<br />
+				</div>
+				
+			{% endfor %}
+			</div>
+		{% endif %}
+	</div>
+	
+</body>
+</html>
