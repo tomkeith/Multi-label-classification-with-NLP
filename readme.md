@@ -6,7 +6,7 @@
 
 **DEMO**: http://tomkeith.pythonanywhere.com/
 
-<a href="http://tomkeith.pythonanywhere.com/" target="_blank"><img src="images/app.png" alt="Genre Genie app" width="540"/></a>
+<a href="http://tomkeith.pythonanywhere.com/" target="_blank"><img src="images/app2.png" alt="Genre Genie app"></a>
 
 ---
 
