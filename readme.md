@@ -40,11 +40,11 @@ The genres, our target variables, displayed some interesting trends. The represe
 
 ![](images/genre-counts-graph.png)
 
-### NLP Pre-processing and TD-IDF
+### NLP Pre-processing and TF-IDF
 
 Once I had my final dataset, I needed to convert the text into numerical values for modelling. To achieve this, we first need to pre-process the text before vectorizing it. I used a tokenizer to break down strings into single words, a stemmer to chop off the end of the words (and remove stop-words), a lemmatizer to change the word into their base form, and finally an un-tokenizer to put the words back into one string.
 
-Once the text was pre-processed, Term Frequency-Inverse Document Frequency (TD-IDF) was used to transform the pre-processed text into vectorized numerical values. But first, and most importantly, the data must be split! 25% was set aside for a test set (75% train). When vectorizing, one n-gram (single words only) and a threshold of 20 for the minimum number of documents the word needed to appear in for it to count as a feature. Once the vectorizer had been fit on the train data, both sets of text from the train and test sets we transformed, then combined with the remaining features (including targets). Finally, exported separate ‘train’ and ‘test’ files where they will be used for modeling.
+Once the text was pre-processed, Term Frequency-Inverse Document Frequency (TF-IDF) was used to transform the pre-processed text into vectorized numerical values. But first, and most importantly, the data must be split! 25% was set aside for a test set (75% train). When vectorizing, one n-gram (single words only) and a threshold of 20 for the minimum number of documents the word needed to appear in for it to count as a feature. Once the vectorizer had been fit on the train data, both sets of text from the train and test sets we transformed, then combined with the remaining features (including targets). Finally, exported separate ‘train’ and ‘test’ files where they will be used for modeling.
 
 ### Modeling with OneVsRest
 
